@@ -1,0 +1,69 @@
+/* This is a partial blocks.css, you need to add more rules
+   to this file to complete the assignment.  Do not add any CSS
+   styling to the original index.htm / start.htm */
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto; /* Dos columnas automáticas */
+    grid-template-rows: auto auto; /* Dos filas automáticas */
+    gap: 10px; /* Espacio entre las celdas */
+}
+
+/* Estilos para cada celda */
+.grid-item {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Posicionamiento específico de los elementos */
+#three {
+    grid-row: 1; /* Primera fila */
+    grid-column: 1; /* Primera columna */
+    border-width: 4px; /* Grosor del borde */
+    border-style: solid; /* Estilo del borde (línea sólida) */
+    border-color: #ffa600;
+
+}
+
+#two {
+    grid-row: 1; /* Primera fila */
+    grid-column: 2; /* Segunda columna */
+    border-width: 4px; /* Grosor del borde */
+    border-style: solid; /* Estilo del borde (línea sólida) */
+    border-color: #15ff00;
+
+}
+
+#four {
+    grid-row: 2; /* Segunda fila */
+    grid-column: 1; /* Primera columna */
+    border-width: 4px; /* Grosor del borde */
+    border-style: solid; /* Estilo del borde (línea sólida) */
+    border-color: #fffb00;
+
+}
+
+#one {
+    grid-row: 2; /* Segunda fila */
+    grid-column: 2; /* Segunda columna */
+    border-width: 5px; /* Grosor del borde */
+    border-style: solid; /* Estilo del borde (línea sólida) */
+    border-color: #0059ff;
+
+}
+
+#link {
+    text-align: center; /* Centrar el contenido del párrafo */
+}
+
+#link a {
+    display: inline-block; /* Convertir el enlace en un bloque en línea */
+    background-color: lightgreen; /* Color de fondo verde */
+    padding: 5px 10px; /* Espaciado interno para mejorar la apariencia */
+    color: black; /* Color del texto */
+    text-decoration: none; /* Quitar subrayado del enlace */
+}
