@@ -1,6 +1,19 @@
 {% extends "base_menu.html" %}
 {% block content %}
 <h1>Ads</h1>
+
+<div style="float:right">
+<!-- https://www.w3schools.com/howto/howto_css_search_button.asp -->
+<form>
+  <input type="text" placeholder="Search.." name="search"
+  {% if search %} value="{{ search }}" {% endif %}
+  >
+  <button type="submit"><i class="fa fa-search"></i></button>
+<a href="{% url 'ads:all' %}"><i class="fa fa-undo"></i></a>
+</form>
+</div>
+
+
 <p>
 {% if ad_list %}
 <ul>
@@ -11,13 +24,13 @@
         {% if ad.owner == user %}
         (<a href="{% url 'ads:ad_update' ad.id %}">Edit</a> |
         <a href="{% url 'ads:ad_delete' ad.id %}">Delete</a>)
-{% endif %}
+        {% endif %}
 
     {% if user.is_authenticated %}
         <!-- Two hrefs with two stacked icons each - one showing and one hidden -->
         <a href="#" onclick=
             "favPost('{% url 'ads:ad_unfavorite' ad.id %}', {{ ad.id }});return false;"
-            
+
             {% if ad.id not in favorites %} style="display: none;" {% endif %}
             id="favorite_star_{{ad.id}}">
         <span class="fa-stack" style="vertical-align: middle;">
@@ -25,7 +38,7 @@
         <i class="fa fa-star-o fa-stack-1x"></i>
         </span>
         </a>
-        
+
         <!-- the second href -->
         <a href="#" onclick=
              "favPost('{% url 'ads:ad_favorite' ad.id %}', {{ ad.id }} );return false;"
